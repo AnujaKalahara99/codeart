@@ -13,81 +13,146 @@
       margin: 0;
     }
 
+    .blob {
+      position: relative;
+    }
+
     .face {
       position: relative;
       width: 300px;
       height: 400px;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      border-radius: 30% 30% 80% 80% / 10% 10% 90% 90%;
-      box-shadow: 0 10px 30px rgba(255, 154, 158, 0.4);
+      background:#ff9a9e;
+      border-radius: 20% 20% 80% 80%;
+      overflow: hidden;
+      /* box-shadow: 0 10px 30px rgba(255, 154, 158, 0.4); */
+    }
+
+    .face .left {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #fad0c4;
     }
 
     .eye {
       position: absolute;
-      top: 100px;
-      width: 50px;
-      height: 50px;
-      background: radial-gradient(circle, #000000 0%, #492424 100%);
-      border-radius: 50%;
+      width: 125px;
+      height:130px;
+      top: 110px;
+      overflow: hidden;
     }
 
-    .mouth {
+    .right .eye {
+      right: 0px;
+    }
+
+    .eye-top {
       position: absolute;
-      bottom: 70px;
-      left: 50%;
-      transform: translateX(-40%);
+      width: 100%;
+      height: 45%;
+      background: #ffc49a;
+      border-radius: 0 90% 0 0;
+      border-bottom: #352222 solid 10px;
+      top: 0;
+      z-index: 20;
+    }
+
+    .right .eye-top {
+        background: #ff9ad7;
+        border-radius: 90% 0 0 0;
+    }
+
+    .eyebrow {
+      position: absolute;
+      width: 90%;
+      height: 30px;
+      top: 0px;
+      overflow: hidden;
+    }
+
+    .right .eyebrow {
+      right: 0%;
+    }
+
+    .eyebrow::after {
+      content: '';
+      position: absolute;
+      width: 130px;
+      height: 55px;
+      border-top: #352222 solid 15px;
+      border-radius: 0 90% 0 0;
+    }
+
+    .right .eyebrow::after {
+      border-radius: 90% 0 0 0;
+      right: 0px;
+    }
+
+    .pupil {
+      position: absolute;
       width: 100px;
       height: 40px;
-      border-bottom: 20px solid #000000;
-      border-radius: 0 0 50px 20px;
+      background: #ffffff;
+      border-radius: 0 0 50% 50%;
+      top: 68px;
+      transform: translateX(12%);
+      overflow: hidden;
+      z-index: 10;
     }
-    
-    .hair {
+
+    .pupil-inner {
       position: absolute;
-      top: -50px;
-      left: -20px;
-      right: -10px;
-      height: 100px;
-      background: linear-gradient(135deg, #000000 0%, #321d1d 100%);
-      border-radius: 50% 50% 0 0;
+      width: 50px;
+      height: 50px;
+      background: #352222;
+      border-radius: 50%;
+      top: -20px;
+      left: 25px;
     }
 
-    .nose {
-    position: absolute;
-    top: 155px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 60px;
-    background: linear-gradient(to bottom, #331111, #200000);
-    border-radius: 50% / 40%;
-    box-shadow:
-        3px 0 5px rgba(0, 0, 0, 0.3),
-    -3px 0 5px rgba(0, 0, 0, 0.3);
+    .eye-bottom {
+      position: absolute;
+      width: 100%;
+      height: 55%;
+      background: #ffc49a;
+      border-radius: 0 0 90% 90%;
+      bottom: 0;
     }
 
-    .nose::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 20px;
-    background: #331111;
-    border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%;
-    box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.4);
+    .right .eye-bottom {
+      background: #ff9ad7;
+      border-radius: 0 0 90% 90%;
     }
 
   </style>
 </head>
 <body>
-  <div class="face">
-    <div class="hair"></div>
-    <div class="eye" style="left: 50px;"></div>
-    <div class="eye" style="right: 50px;"></div>
-    <div class="nose"></div>
-    <div class="mouth"></div>
-  </div>
+    <div class="blob">
+        <div class="face">
+            <div class="right">
+                <div class="eye">
+                    <div class="eye-top">
+                        <div class="eyebrow"></div>
+                    </div>
+                    <div class="pupil">
+                        <div class="pupil-inner"></div>
+                    </div>
+                    <div class="eye-bottom"></div>
+                </div>
+            </div>
+            <div class="left">
+                <div class="eye">
+                    <div class="eye-top">
+                        <div class="eyebrow"></div>
+                    </div>
+                    <div class="pupil">
+                        <div class="pupil-inner"></div>
+                    </div>
+                    <div class="eye-bottom"></div>
+                </div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+    </div>
 </body>
 </html>
