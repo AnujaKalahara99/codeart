@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Blob Art</title>
+  <style>
+    body {
+      background: #1e1e2f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .face {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      border-radius: 30% 30% 80% 80% / 10% 10% 90% 90%;
+      box-shadow: 0 10px 30px rgba(255, 154, 158, 0.4);
+    }
+
+    .eye {
+      position: absolute;
+      top: 100px;
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, #000000 0%, #492424 100%);
+      border-radius: 50%;
+    }
+
+    .mouth {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-40%);
+      width: 100px;
+      height: 40px;
+      border-bottom: 20px solid #000000;
+      border-radius: 0 0 50px 20px;
+    }
+    
+    .hair {
+      position: absolute;
+      top: -50px;
+      left: -20px;
+      right: -10px;
+      height: 100px;
+      background: linear-gradient(135deg, #000000 0%, #321d1d 100%);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .nose {
+    position: absolute;
+    top: 155px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 60px;
+    background: linear-gradient(to bottom, #331111, #200000);
+    border-radius: 50% / 40%;
+    box-shadow:
+        3px 0 5px rgba(0, 0, 0, 0.3),
+    -3px 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .nose::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    background: #331111;
+    border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%;
+    box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.4);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="face">
+    <div class="hair"></div>
+    <div class="eye" style="left: 50px;"></div>
+    <div class="eye" style="right: 50px;"></div>
+    <div class="nose"></div>
+    <div class="mouth"></div>
+  </div>
+</body>
+</html>
