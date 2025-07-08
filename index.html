@@ -50,7 +50,7 @@
       position: absolute;
       width: 100%;
       height: 45%;
-      background: #ffc49a;
+      background: rgb(211, 174, 128);
       border-radius: 0 90% 0 0;
       border-bottom: #352222 solid 10px;
       top: 0;
@@ -58,7 +58,7 @@
     }
 
     .right .eye-top {
-        background: #ff9ad7;
+        background: #d58095;
         border-radius: 90% 0 0 0;
     }
 
@@ -114,15 +114,186 @@
       position: absolute;
       width: 100%;
       height: 55%;
-      background: #ffc49a;
+      background: rgb(211, 174, 128);
       border-radius: 0 0 90% 90%;
       bottom: 0;
     }
 
     .right .eye-bottom {
-      background: #ff9ad7;
+      background: #d58095;
       border-radius: 0 0 90% 90%;
     }
+
+    .nose {
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      background: #cd7c7e;
+      top: 170px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nose::after {
+      content: '';
+      position: absolute;
+      background: #ff9a9e;
+      width: 50%;
+      height: 120%;
+      transform: translateX(50%);
+    }
+
+    .nose-lower {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 40%;
+      background: #cd7c7e;
+      transform: translateX(-25%);
+      border-radius: 10% 10% 50% 50% / 10% 10% 100% 100%;
+      bottom: -40px;
+      overflow: hidden;
+    }
+
+    .nosetril {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #000000;
+      border-radius: 50%;
+      top: 25px;
+      left: 15%;
+      transform: translateX(-50%);
+    }
+
+    .mouth {
+      position: absolute;
+      width:100px;
+      height: 70px;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mouth::before {
+      content: '';
+      position: absolute;
+      width: 25%;
+      height: 20%;
+      background: #ff9a9e;
+      border-radius: 0 0 50% 50%;
+      top: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .lips {
+      position: absolute;
+      width: 60%;
+      height: 40%;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%);
+      overflow: hidden;
+    }
+
+    .lips::after {
+      content: '';
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 20%;
+      left: -5%;
+      rotate: 45deg;
+      background: #352222;
+      bottom: -15px;
+    }
+    
+    .lips::before {
+      content: '';
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 20%;
+      right: -5%;
+      rotate: 45deg;
+      background: #352222;
+      bottom: -15px;
+    }
+
+    .lips-lower {
+      position: absolute;
+      width: 30%;
+      height: 20%;
+      transform: translateX(50%);
+      background: #352222;
+      border-radius: 0 0 50% 50%;
+      bottom: 0px;
+      left: 20%;
+    }
+
+    .shadow1 {
+      position: absolute;
+      width: 15%;
+      height: 30%;
+      background: rgb(211, 174, 128);
+      top: 0;
+      left: 0;
+    }
+
+    .right .shadow1 {
+      left: 90%;
+      bottom: 0%;
+      background: #d58095;
+    }
+
+    .shadow2 {
+      position: absolute;
+      width: 40%;
+      height: 40%;
+      background: rgb(211, 174, 128);
+      border-radius: 50%;
+      rotate: -45deg;
+      bottom: 0%;
+    }
+
+    .right .shadow2 {
+      left: 80%;
+      rotate: 45deg;
+      bottom: 0%;
+      background: #d58095;
+    }
+
+    .blush {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: #ffc7c9;
+      border-radius: 50%;
+      top: 57%;
+      left: -5%;
+    }
+
+    .hair1 {
+      position: absolute;
+      width: 80%;
+      height: 150px;
+      background: #000000;
+      border-radius: 10% 50% 0% 0%;
+      top: -20%;
+      left: -5%;
+    }
+
+    .hair2 {
+      position: absolute;
+      width: 60%;
+      height: 120px;
+      background: #000000;
+      border-radius: 100% 0% 30% 10%;
+      top: -10%;
+      right: -10%;
+    }
+
 
   </style>
 </head>
@@ -139,6 +310,9 @@
                     </div>
                     <div class="eye-bottom"></div>
                 </div>
+                <div class="shadow1"></div>
+                <div class="shadow2"></div>
+                <div class="blush"></div>
             </div>
             <div class="left">
                 <div class="eye">
@@ -150,9 +324,23 @@
                     </div>
                     <div class="eye-bottom"></div>
                 </div>
+                <div class="shadow1"></div>
+                <div class="shadow2"></div>
+                <div class="blush"></div>
             </div>
-            <div class="mouth"></div>
+            <div class="nose">
+                <div class="nose-lower">
+                    <div class="nosetril"></div>
+                    <div class="nosetril" style="left: 85%;"></div>
+                </div>
+            </div>
+            <div class="mouth">
+                <div class="lips"></div>
+                <div class="lips-lower"></div>
+            </div>
         </div>
+        <div class="hair1"></div>
+        <div class="hair2"></div>
     </div>
 </body>
 </html>
