@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Airplane with Luggage</title>
+  <style>
+    body {
+      margin: 0;
+      background: #cedae9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .airplane {
+      position: relative;
+      width: 510px;
+      height: 100px;
+      background: white;
+      rotate: 10deg;
+      border-radius: 90px 30px 100px 30px;
+      box-shadow: inset 0 0 0 2px #ccc;
+      animation: movePlane 3s ease-in-out infinite;
+    }
+
+    .airplane::before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: -20px;
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 90px 0 0 70px / 50px 0 0 40px;
+      box-shadow: inset 3px 0px 0 2px #ccc;
+    }
+
+    .airplane::after {
+      content: '';
+      position: absolute;
+      top: -58px;
+      right: 0px;
+      width: 50px;
+      height: 60px;
+      background: white;
+      transform: skew(-30deg);
+      border-radius: 60px 0 0px 0px;
+      box-shadow: inset 0px 2px 0 2px #ccc;
+    }
+
+    .door {
+      position: absolute;
+      top: 20px;
+      left: 70px;
+      width: 30px;
+      height: 40px;
+      background: #f1f2f6;
+      box-shadow: inset 0px 1px 0 2px #ccc;
+      border-radius: 10px;
+    }
+    .windows {
+      position: absolute;
+      top: 20px;
+      left: 120px;
+      width: 340px;
+      height: 14px;
+      background: #f1f2f6;
+      box-shadow: inset 0px 1px 0 1px #ccc;
+      border-radius: 15px;
+    }
+
+    .wing {
+      position: absolute;
+      bottom: 20px;
+      left: 240px;
+      width: 140px;
+      height: 100px;
+      background: #bdbdbd;
+      transform: skewX(-60deg);
+      border-radius: 100px 100px 0 0;
+      box-shadow: inset 5px 2px 0 2px #ffffff;
+      z-index: 10;
+    }
+
+    .wing-small {
+      position: absolute;
+      bottom: 40px;
+      right: 0px;
+      width: 70px;
+      height: 50px;
+      background: #bdbdbd;
+      transform: skewX(-60deg);
+      border-radius: 100px 100px 0 0;
+      box-shadow: inset 5px 2px 0 2px #ffffff;
+    }
+
+    .engine {
+      position: absolute;
+      top: 20px;
+      left: 200px;
+      width: 50px;
+      rotate: 90deg;
+      border-bottom: 100px solid #d4d4d4;
+	    border-left: 15px solid transparent;
+	    border-right: 15px solid transparent;
+      /* background: #2f3542; */
+      border-radius: 50%;
+      z-index: 15;
+    }
+
+    .engine::before {
+      content: '';
+      position: absolute;
+      top: 70px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 50px;
+      height: 20px;
+      background: #2f3542;
+      border-radius: 50%;
+    }
+
+    .piloto-window {
+      position: absolute;
+      top: 15px;
+      left: 25px;
+      width: 30px;
+      height: 15px;
+      background: #7ed4ff;
+      border-radius: 90% 10% 30% 0;
+    }
+
+    .luggage {
+      position: absolute;
+      /* background: violet; */
+      width: 150px;
+      height: 100px;
+      top: -100px;
+      /* display: flex; */
+      gap: 5px;
+      left: 130px;
+    }
+
+    .bag {
+      position: absolute;
+      bottom: 0;
+      width: 60px;
+      height: 30px;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .seegreen { 
+      background: #7bbebb;
+      box-shadow: inset 0 2px 0 2px #97e8e4; 
+    }
+
+    .green { 
+      left: 60px;
+      width: 100px;
+      background: #9dd476;
+      box-shadow: inset 0 2px 0 2px #b6e496; 
+    }
+
+    .blue {
+      top: 15px;
+      left: 30px;
+      height: 55px;
+      width: 100px; 
+      background: #5b80d6;
+      box-shadow: inset 0 2px 0 2px #abc5ff; 
+    }
+
+    .rope {
+      position: absolute;
+      top: -85px;
+      left: 200px;
+      width: 4px;
+      height: 150px;
+      background: #000000;
+      border-radius: 5px;
+      z-index: 5;
+    }
+
+  .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: moveClouds 6s linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .cloud-child {
+      top: 20%;
+      left: -200px;
+      width: 120px;
+      height: 60px;
+    }
+
+    .cloud-child::before {
+      width: 80px;
+      height: 80px;
+      top: -20px;
+      left: 40px;
+    }
+
+    .cloud-child::after {
+      width: 100px;
+      height: 100px;
+      top: -30px;
+      left: 80px;
+    }
+
+    .random1 {
+      top: 100px;
+      left: -200px;
+      animation: moveClouds 10s linear infinite;
+    }
+
+    .random2 {
+      top: 450px;
+      left: -200px;
+      animation: moveClouds 3s linear infinite;
+    }
+
+    .random3 {
+      top: 300px;
+      left: -100px;
+      animation: moveClouds 2s linear infinite;
+    }
+
+    .signature {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: rgb(0, 0, 0);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+      user-select: none;
+    }
+
+    @keyframes moveClouds {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(120vw);
+      }
+    }
+
+  @keyframes movePlane {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="cloud cloud-child"></div>
+  <div class="cloud cloud-child random1"></div>
+  <div class="cloud cloud-child random2"></div>
+  <div class="cloud cloud-child random3"></div>
+  <div class="airplane">
+    <div class="windows"></div>
+    <div class="door"></div>
+    <div class="wing"></div>
+    <div class="wing-small"></div>
+    <div class="engine"></div>
+    <div class="piloto-window"></div>
+    <div class="rope"></div>
+    <div class="luggage">
+      <div class="bag seegreen"></div>
+      <div class="bag green"></div>
+      <div class="bag blue"></div>
+    </div>
+  </div>
+  <div class="signature">Anuja Kalhara</div>
+</body>
+</html>
